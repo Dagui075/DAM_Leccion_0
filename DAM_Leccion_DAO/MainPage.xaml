@@ -1,7 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="DAM_Leccion_DAO.MainPage">
+             x:Class="DAM_Leccion_DAO.MainPage"
+             xmlns:Leccion2="clr-namespace:DAM_Leccion_DAO.Model">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Leccion2:PersonaModel x:Key="persona" Nombre="Sofia">
+            </Leccion2:PersonaModel>
+        </ResourceDictionary>
+    </ContentPage.Resources>
 
     <ScrollView>
         <VerticalStackLayout
@@ -11,7 +18,7 @@
                 Source="dotnet_bot.png"
                 HeightRequest="185"
                 Aspect="AspectFit"
-                SemanticProperties.Description="dot net bot in a race car number eight" />
+                SemanticProperties.Description="dot net bot in a hovercraft number nine" />
 
             <Label
                 Text="Hello, World!"
@@ -30,6 +37,19 @@
                 SemanticProperties.Hint="Counts the number of times you click"
                 Clicked="OnCounterClicked"
                 HorizontalOptions="Fill" />
+            <Entry
+                x:Name="txtNombre"
+                Text="{Binding Nombre}"
+                Placeholder="Escribe un nombre"
+                HorizontalOptions="FillAndExpand"
+                ></Entry>
+            <Button
+                    x:Name="btnAceptar"
+                    Clicked="btnAceptar_Clicked"
+                    HorizontalOptions="CenterAndExpand"
+                    Text="Aceptar"
+                    />
+
         </VerticalStackLayout>
     </ScrollView>
 
