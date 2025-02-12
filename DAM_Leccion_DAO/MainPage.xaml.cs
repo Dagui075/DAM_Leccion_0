@@ -1,4 +1,5 @@
 ﻿using DAM_Leccion_DAO.Model;
+using DAM_Leccion_DAO.ViewModel;
 
 namespace DAM_Leccion_DAO
 {
@@ -6,13 +7,12 @@ namespace DAM_Leccion_DAO
     {
         int count = 0;
 
-
-        public PersonaModel personaModel { get; set; }
+        MainPageViewModel MainPageviewModel = new MainPageViewModel();
 
         public MainPage()
         {
             InitializeComponent();
-            Ejecutar();
+            BindingContext = MainPageviewModel;
         }
 
         private void OnCounterClicked(object sender, EventArgs e)
@@ -27,30 +27,11 @@ namespace DAM_Leccion_DAO
             SemanticScreenReader.Announce(CounterBtn.Text);
         }
 
-        public void Ejecutar()
-        {
-            personaModel = new PersonaModel()
-            {
-                Nombre = "Hola aqui estoy",
-            };
-            BindingContext = personaModel.Nombre;
-            //txtNombre.Text = personaModel.Nombre;
-
-            //Binding personaBinding = new Binding();
-
-            //personaBinding.Source = personaModel;//Origen
-            //personaBinding.Path = "Nombre";//Ruta
-            //txtNombre.SetBinding(Entry.TextProperty, personaBinding);//Destino Final
-
-
-
-
-        }
+        
 
         private void btnAceptar_Clicked(object sender, EventArgs e)
         {
-            //DisplayAlert("Asistente del sistema", "Se a guardado el reistro de la BD", "Aceptar");
-            personaModel.Nombre = "Muñeco";
+            DisplayAlert("Asistente del sistema", "Se a guardado el reistro de la BD", "Aceptar");
         }
     }
 

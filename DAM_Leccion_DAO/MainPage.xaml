@@ -39,10 +39,25 @@
                 HorizontalOptions="Fill" />
             <Entry
                 x:Name="txtNombre"
-                Text="{Binding Nombre}"
+                Text="{Binding PersonaModel.Nombre}"
                 Placeholder="Escribe un nombre"
                 HorizontalOptions="FillAndExpand"
                 ></Entry>
+
+            <Entry
+    x:Name="txtApellido"
+    Text="{Binding PersonaModel.Apellido}"
+    Placeholder="Escribe tu apellido"
+    HorizontalOptions="FillAndExpand"
+    ></Entry>
+            <Entry
+x:Name="txtEdad"
+Text="{Binding PersonaModel.edad}"
+Placeholder="Escribe tu edad"
+HorizontalOptions="FillAndExpand"
+></Entry>
+
+
             <Button
                     x:Name="btnAceptar"
                     Clicked="btnAceptar_Clicked"
